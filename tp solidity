@@ -1,0 +1,86 @@
+//SPDX-License-Identifier: MIT
+pragma solidity ^0.8.10;
+ 
+contract Estudiante{
+ 
+    string private _Nombre;
+    string private _Apellido;
+    string private _Curso;
+   
+ 
+    mapping(string => uint) private _notasMaterias;
+    address private _Docente;
+    //mapping(string) private _Nombre;
+    //address private _owner;
+    //mapping(string => string) private _Apellido;
+    //address private _owner;
+ 
+ 
+    constructor(string memory Nombre_ , string memory Apellido_ , string memory Curso_){
+        _Nombre =  Nombre_;
+        _Apellido = Apellido_;
+        _Curso = Curso_;
+        _Docente = msg.sender;
+    }
+       
+       
+       
+   
+   
+
+ 
+    function nombre_Completo() public view returns (string memory){
+               return _Nombre;
+       
+           //Falta apellido
+    }
+    function apellido() public view returns (string memory){
+        return _Apellido;
+    }
+    function curso() public view returns (string memory){
+        return _Curso;
+    }
+ 
+ 
+    function set_nota_materia(uint notas, string memory materia) public{
+        require(msg.sender == _Docente, "Solo el docente registrado puede asignar notas");
+        notas_materias[materia] = notas;
+            }
+ 
+    function nota_materia(string memory materia) public view returns (uint){
+        return nota_materias[materia];
+    }
+
+    string public Desaprobado = "Desaprobado";
+    string public Aprobado = "Aprobado";
+    function aprobo(string memory materia) public view returns (string memory){
+       
+        if(_notasMaterias[materia] < 60){
+            
+              return  Desaprobado;
+             
+        }
+        else if(_notasMaterias[materia] > 60){
+               
+              return Aprobado;
+               
+            
+        }
+       
+    }
+   
+    mapping(string => int[]) private _promedio;
+    //materias = nota_materia;
+    
+
+    function promedio() public view returns (uint memory){
+        for(int i=0; i<materias.length;i++){
+            _promedio += notas_materias[materias[i]];
+        }
+       uint[] arr;
+       arr.push(notas);
+       
+       return _promedio/materias.length ;
+         }
+ 
+}
