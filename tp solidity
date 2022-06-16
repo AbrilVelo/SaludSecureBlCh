@@ -3,7 +3,7 @@ pragma solidity ^0.8.10;
  
 contract Estudiante{
 
-    string private _nombre;
+    string private _nombre; 
     string private _apellido;
     string private _curso;
     address private _docente;
@@ -24,8 +24,8 @@ function apellido() public view returns (string memory){
 
  
 function nombre_completo() public view returns (string memory){
-        return _nombre;
-        //return _apellido;
+        return string.concat(_nombre, _apellido);
+    
 }
  
 
