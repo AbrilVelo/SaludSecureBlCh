@@ -1,1 +1,10 @@
-Opcionales
+
+
+Opcional
+
+// a. ¿Cómo modificarías el Smart Contract para que acepte notas de 4 bimestres? 
+//         Haría un array para meter en cada posición un bimestre(todo lo hecho anterior).
+// b. Como le permitirias al docente darle permiso a otros docentes de asignar notas 
+//      Un array con una lista de personas que pueden modificar.
+// c. Investigar sobre los eventos de Solidity, como incluirías un evento para registrar cuando el docente determina una nota.
+// d. Implementar las consignas a, b y/o c en otro archivo EstudianteAlt.sol
