@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+        <script>
+            const Ver_Apellido= [
+			{
+		
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "nombre_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "apellido_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "DNI_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "Credencial_",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "CantMeds",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Ver_Credencial",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Ver_DNI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Ver_apellido",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Ver_medicamento",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Ver_nombre_",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "medicamento",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "cantidad",
+				"type": "uint256"
+			}
+		],
+		"name": "set_CantidadMedicamentos",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+],
+       const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');
+            function contractInteraction() {
+                const contractAddress = '0x0d4777433cD38103Fc3421d7BcD2976d5d884C41'
+                const connectedContract = new ethers.Contract(contractAddress, SaludSecure.abi, provider);
+                const txn = connectedContract()
+                txn.then(function(result) {
+                    alert(result)
+                })
+            }
+        </script>
+
+</head>
+<body>
+    <input id="clickMe" type="button" value="Call Contract Function" onclick="contractInteraction();" />    
+	<h1>holaaaaa</h1>
+</body>
+</html>
+
+
